@@ -2,6 +2,8 @@
 
 Outil Python local de recherche d'extraits vidéo, testé sur la RTX 5090 de ce poste. Licence MIT pour le code ; les vidéos et les modèles gardent leurs licences propres. Les fichiers téléchargés ne sont pas distribués dans le dépôt.
 
+> **This tool uses YouTube API Services** (read-only, API key, no OAuth). **[Privacy Policy](PRIVACY.md)** · **[Terms of Use](TERMS.md)** · [YouTube Terms of Service](https://www.youtube.com/t/terms) · [Google Privacy Policy](https://policies.google.com/privacy)
+
 Confidentialité : [PRIVACY.md](PRIVACY.md) · Conditions : [TERMS.md](TERMS.md).
 
 ## Mise à jour du 21/10/2026 (fin de journée)
