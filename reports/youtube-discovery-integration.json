@@ -1,0 +1,28 @@
+{
+  "calls": 29,
+  "new": 723,
+  "seconds": 38.015149400000155,
+  "methods": [
+    {
+      "method": "broad-topic",
+      "requests": 12,
+      "returned": 598,
+      "new": 568,
+      "duplicate_or_filtered": 30
+    },
+    {
+      "method": "chronological",
+      "requests": 3,
+      "returned": 135,
+      "new": 98,
+      "duplicate_or_filtered": 37
+    },
+    {
+      "method": "daily-partition",
+      "requests": 17,
+      "returned": 234,
+      "new": 155,
+      "duplicate_or_filtered": 79
+    }
+  ]
+}

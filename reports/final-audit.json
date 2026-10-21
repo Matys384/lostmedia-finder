@@ -1,0 +1,191 @@
+{
+  "counts": [
+    {
+      "source": "archive",
+      "discovered": 2115,
+      "analyzed": 5,
+      "ignored": 17,
+      "inaccessible": 0,
+      "failed": 0,
+      "queued": 2093,
+      "running": 0
+    },
+    {
+      "source": "dailymotion",
+      "discovered": 6600,
+      "analyzed": 48,
+      "ignored": 2,
+      "inaccessible": 0,
+      "failed": 0,
+      "queued": 6550,
+      "running": 0
+    },
+    {
+      "source": "youtube",
+      "discovered": 1260,
+      "analyzed": 14,
+      "ignored": 0,
+      "inaccessible": 1,
+      "failed": 0,
+      "queued": 1245,
+      "running": 0
+    }
+  ],
+  "accessible": [
+    {
+      "source": "archive",
+      "n": 5
+    },
+    {
+      "source": "dailymotion",
+      "n": 48
+    },
+    {
+      "source": "youtube",
+      "n": 14
+    }
+  ],
+  "events": [
+    {
+      "provider": "archive",
+      "method": "chronological",
+      "calls": 38,
+      "returned": 3715,
+      "added": 2115,
+      "seconds": 97.39399999999841
+    },
+    {
+      "provider": "dailymotion",
+      "method": "chronological",
+      "calls": 66,
+      "returned": 6600,
+      "added": 6600,
+      "seconds": 119.1559999999954
+    },
+    {
+      "provider": "youtube",
+      "method": "broad-topic",
+      "calls": 12,
+      "returned": 598,
+      "added": 568,
+      "seconds": 18.938999999998487
+    },
+    {
+      "provider": "youtube",
+      "method": "chronological",
+      "calls": 13,
+      "returned": 635,
+      "added": 531,
+      "seconds": 19.106000000001586
+    },
+    {
+      "provider": "youtube",
+      "method": "daily-partition",
+      "calls": 17,
+      "returned": 234,
+      "added": 155,
+      "seconds": 18.3899999999976
+    },
+    {
+      "provider": "youtube",
+      "method": "playlist",
+      "calls": 1,
+      "returned": 47,
+      "added": 6,
+      "seconds": 1.5159999999996217
+    }
+  ],
+  "quality": [
+    {
+      "provider": "youtube",
+      "returned": 500,
+      "added": 433,
+      "duplicates": 67,
+      "filtered": 0
+    }
+  ],
+  "quota": [
+    {
+      "day": "2026-10-21",
+      "provider": "youtube",
+      "calls": 48
+    }
+  ],
+  "frontier_states": [
+    {
+      "provider": "archive",
+      "state": "exhausted",
+      "n": 1
+    },
+    {
+      "provider": "dailymotion",
+      "state": "pending",
+      "n": 5
+    },
+    {
+      "provider": "dailymotion",
+      "state": "saturated",
+      "n": 4
+    },
+    {
+      "provider": "dailymotion",
+      "state": "split",
+      "n": 2
+    },
+    {
+      "provider": "youtube",
+      "state": "exhausted",
+      "n": 19
+    },
+    {
+      "provider": "youtube",
+      "state": "pending",
+      "n": 11
+    }
+  ],
+  "periods_started": [
+    {
+      "id": 1,
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "state": "active"
+    }
+  ],
+  "processing": [
+    {
+      "source": "archive",
+      "n": 5,
+      "frame_views": 2681,
+      "feature_bytes": 3797409,
+      "measured_seconds": 39.37700000000041
+    },
+    {
+      "source": "dailymotion",
+      "n": 48,
+      "frame_views": 16996,
+      "feature_bytes": 23820740,
+      "measured_seconds": 248.57299999999668
+    },
+    {
+      "source": "youtube",
+      "n": 14,
+      "frame_views": 8897,
+      "feature_bytes": 12700572,
+      "measured_seconds": 200.95000000000073
+    }
+  ],
+  "matches": [
+    {
+      "source": "dailymotion",
+      "video_id": 118,
+      "score": 0.5884375000000001,
+      "payload": "{\"score\": 0.5884375000000001, \"status\": \"visual_candidate\", \"temporal_frames\": 0, \"speed\": null, \"offset\": null, \"start\": 44.842333333333336, \"end\": 44.842333333333336, \"pairs\": [{\"candidate_time\": 44.842333333333336, \"reference_time\": 2.0, \"similarity\": 0.84375, \"cosine\": 0.1692114770412445, \"phash_distance\": 10, \"candidate_thumb\": \"thumbs/118/ca7bdb0810b71db09ef6/000022.jpg\", \"reference_thumb\": \"thumbs/1/ca7bdb0810b71db09ef6/000001.jpg\", \"crop\": \"full\", \"reference_crop\": \"tl\", \"inliers\": 4}]}"
+    }
+  ],
+  "storage": {
+    "used_bytes": 44073616,
+    "budget_bytes": 536870912000,
+    "free_bytes": 642672758784,
+    "minimum_free_bytes": 5368709120
+  }
+}

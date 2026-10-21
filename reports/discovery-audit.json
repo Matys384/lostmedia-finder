@@ -1,0 +1,454 @@
+{
+  "period": [
+    "2007-08-15",
+    "2007-08-31"
+  ],
+  "elapsed_seconds": 17.282134200000655,
+  "successful_page_calls": 10,
+  "new_unique_entries": 433,
+  "unique_entries_per_second": 25.054775931550374,
+  "progress": [
+    {
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "state": "active",
+      "provider": "archive",
+      "discovered": 2115,
+      "analyzed": 5,
+      "inaccessible": 0,
+      "unprocessed": 2110,
+      "saturated_windows": 0,
+      "blocked_windows": 0,
+      "unavailable_methods": 0,
+      "exhausted_windows": 1,
+      "windows": 1,
+      "note": null
+    },
+    {
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "state": "active",
+      "provider": "dailymotion",
+      "discovered": 6600,
+      "analyzed": 48,
+      "inaccessible": 0,
+      "unprocessed": 6552,
+      "saturated_windows": 4,
+      "blocked_windows": 0,
+      "unavailable_methods": 0,
+      "exhausted_windows": 0,
+      "windows": 11,
+      "note": "Daily pagination ceiling; residual coverage unknown"
+    },
+    {
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "state": "active",
+      "provider": "youtube",
+      "discovered": 1260,
+      "analyzed": 14,
+      "inaccessible": 1,
+      "unprocessed": 1245,
+      "saturated_windows": 0,
+      "blocked_windows": 0,
+      "unavailable_methods": 0,
+      "exhausted_windows": 19,
+      "windows": 30,
+      "note": null
+    }
+  ],
+  "discovery": [
+    {
+      "provider": "archive",
+      "method": "chronological",
+      "requests": 38,
+      "returned": 3715,
+      "new": 2115,
+      "duplicate_or_filtered": 1600,
+      "seconds": 97.39399999999841
+    },
+    {
+      "provider": "dailymotion",
+      "method": "chronological",
+      "requests": 66,
+      "returned": 6600,
+      "new": 6600,
+      "duplicate_or_filtered": 0,
+      "seconds": 119.1559999999954
+    },
+    {
+      "provider": "youtube",
+      "method": "broad-topic",
+      "requests": 12,
+      "returned": 598,
+      "new": 568,
+      "duplicate_or_filtered": 30,
+      "seconds": 18.938999999998487
+    },
+    {
+      "provider": "youtube",
+      "method": "chronological",
+      "requests": 13,
+      "returned": 635,
+      "new": 531,
+      "duplicate_or_filtered": 104,
+      "seconds": 19.106000000001586
+    },
+    {
+      "provider": "youtube",
+      "method": "daily-partition",
+      "requests": 17,
+      "returned": 234,
+      "new": 155,
+      "duplicate_or_filtered": 79,
+      "seconds": 18.3899999999976
+    },
+    {
+      "provider": "youtube",
+      "method": "playlist",
+      "requests": 1,
+      "returned": 47,
+      "new": 6,
+      "duplicate_or_filtered": 41,
+      "seconds": 1.5159999999996217
+    }
+  ],
+  "frontier": [
+    {
+      "provider": "archive",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "pages": 38,
+      "state": "exhausted",
+      "error": null
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-15",
+      "end": "2007-08-15",
+      "pages": 10,
+      "state": "saturated",
+      "error": "Daily pagination ceiling; residual coverage unknown"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-15",
+      "end": "2007-08-21",
+      "pages": 10,
+      "state": "split",
+      "error": null
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "pages": 10,
+      "state": "split",
+      "error": null
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-16",
+      "end": "2007-08-16",
+      "pages": 10,
+      "state": "saturated",
+      "error": "Daily pagination ceiling; residual coverage unknown"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-17",
+      "end": "2007-08-17",
+      "pages": 10,
+      "state": "saturated",
+      "error": "Daily pagination ceiling; residual coverage unknown"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-18",
+      "end": "2007-08-18",
+      "pages": 10,
+      "state": "saturated",
+      "error": "Daily pagination ceiling; residual coverage unknown"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-19",
+      "end": "2007-08-19",
+      "pages": 6,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-20",
+      "end": "2007-08-20",
+      "pages": 0,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-21",
+      "end": "2007-08-21",
+      "pages": 0,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-22",
+      "end": "2007-08-28",
+      "pages": 0,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-29",
+      "end": "2007-08-31",
+      "pages": 0,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-15",
+      "pages": 1,
+      "state": "exhausted",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "pages": 3,
+      "state": "exhausted",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "pages": 2,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "pages": 2,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "pages": 2,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "pages": 1,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "pages": 2,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "pages": 2,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "pages": 2,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "pages": 2,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "pages": 2,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "pages": 1,
+      "state": "exhausted",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "pages": 2,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "pages": 2,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-16",
+      "end": "2007-08-16",
+      "pages": 1,
+      "state": "exhausted",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-17",
+      "end": "2007-08-17",
+      "pages": 1,
+      "state": "exhausted",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-18",
+      "end": "2007-08-18",
+      "pages": 1,
+      "state": "exhausted",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-19",
+      "end": "2007-08-19",
+      "pages": 1,
+      "state": "exhausted",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-20",
+      "end": "2007-08-20",
+      "pages": 1,
+      "state": "exhausted",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-21",
+      "end": "2007-08-21",
+      "pages": 1,
+      "state": "exhausted",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-22",
+      "end": "2007-08-22",
+      "pages": 1,
+      "state": "exhausted",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-23",
+      "end": "2007-08-23",
+      "pages": 1,
+      "state": "exhausted",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-24",
+      "end": "2007-08-24",
+      "pages": 1,
+      "state": "exhausted",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-25",
+      "end": "2007-08-25",
+      "pages": 1,
+      "state": "exhausted",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-26",
+      "end": "2007-08-26",
+      "pages": 1,
+      "state": "exhausted",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-27",
+      "end": "2007-08-27",
+      "pages": 1,
+      "state": "exhausted",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-28",
+      "end": "2007-08-28",
+      "pages": 1,
+      "state": "exhausted",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-29",
+      "end": "2007-08-29",
+      "pages": 1,
+      "state": "exhausted",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-30",
+      "end": "2007-08-30",
+      "pages": 1,
+      "state": "exhausted",
+      "error": null
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-31",
+      "end": "2007-08-31",
+      "pages": 1,
+      "state": "exhausted",
+      "error": null
+    }
+  ]
+}

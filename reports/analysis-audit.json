@@ -1,0 +1,170 @@
+{
+  "period": [
+    "2007-08-15",
+    "2007-08-31"
+  ],
+  "settings": {
+    "max_duration_seconds": 600,
+    "max_download_mb": 100,
+    "interval": 2,
+    "crops": 7,
+    "precision": "float16"
+  },
+  "runs": [
+    {
+      "processed": 10,
+      "failed": 10,
+      "signature": "ca7bdb0810b71db09ef6",
+      "source": "dailymotion",
+      "wall_seconds": 40.33430820000103
+    },
+    {
+      "processed": 20,
+      "failed": 16,
+      "signature": "ca7bdb0810b71db09ef6",
+      "source": "archive",
+      "wall_seconds": 168.56027859999995
+    }
+  ],
+  "storage": {
+    "used_bytes": 153816718,
+    "budget_bytes": 536870912000,
+    "free_bytes": 642583953408,
+    "minimum_free_bytes": 5368709120
+  },
+  "states": [
+    {
+      "source": "archive",
+      "state": "done",
+      "n": 5
+    },
+    {
+      "source": "archive",
+      "state": "ignored",
+      "n": 17
+    },
+    {
+      "source": "archive",
+      "state": "queued",
+      "n": 953
+    },
+    {
+      "source": "dailymotion",
+      "state": "queued",
+      "n": 2700
+    }
+  ],
+  "processing": [
+    {
+      "source": "archive",
+      "n": 5,
+      "measured_seconds": 39.37700000000041,
+      "frame_views": 2681,
+      "feature_bytes": 3797409
+    }
+  ],
+  "errors": [
+    {
+      "source": "archive",
+      "external_id": "1186815",
+      "state": "ignored",
+      "error": "ValueError: Archive item has no video within download size limit"
+    },
+    {
+      "source": "archive",
+      "external_id": "11FR_Al_Quran_a_Miracle_of_Miracles",
+      "state": "ignored",
+      "error": "ValueError: Archive item has no video within download size limit"
+    },
+    {
+      "source": "archive",
+      "external_id": "1234hhjkhkkh",
+      "state": "ignored",
+      "error": "ValueError: Archive item has no video within download size limit"
+    },
+    {
+      "source": "archive",
+      "external_id": "13AosFiltro",
+      "state": "ignored",
+      "error": "ValueError: Video duration 902.6s exceeds limit 600s"
+    },
+    {
+      "source": "archive",
+      "external_id": "14TU_Islam_and_Christianity",
+      "state": "ignored",
+      "error": "ValueError: Archive item has no video within download size limit"
+    },
+    {
+      "source": "archive",
+      "external_id": "19FR_Was_Christ_Crucified_Deedat_vs_Floyd",
+      "state": "ignored",
+      "error": "ValueError: Archive item has no video within download size limit"
+    },
+    {
+      "source": "archive",
+      "external_id": "1stHokageSig",
+      "state": "ignored",
+      "error": "ValueError: Archive item has no video within download size limit"
+    },
+    {
+      "source": "archive",
+      "external_id": "20.32655555",
+      "state": "ignored",
+      "error": "ValueError: Archive item has no video within download size limit"
+    },
+    {
+      "source": "archive",
+      "external_id": "2002.10.04.01",
+      "state": "ignored",
+      "error": "ValueError: Archive item has no video within download size limit"
+    },
+    {
+      "source": "archive",
+      "external_id": "2004.11.20.01",
+      "state": "ignored",
+      "error": "ValueError: Archive item has no video within download size limit"
+    },
+    {
+      "source": "archive",
+      "external_id": "2004.11.20.02",
+      "state": "ignored",
+      "error": "ValueError: Archive item has no video within download size limit"
+    },
+    {
+      "source": "archive",
+      "external_id": "2004.11.21.01",
+      "state": "ignored",
+      "error": "ValueError: Archive item has no video within download size limit"
+    },
+    {
+      "source": "archive",
+      "external_id": "2004.11.21.02",
+      "state": "ignored",
+      "error": "ValueError: Archive item has no video within download size limit"
+    },
+    {
+      "source": "archive",
+      "external_id": "2004.11.21.03",
+      "state": "ignored",
+      "error": "ValueError: Archive item has no video within download size limit"
+    },
+    {
+      "source": "archive",
+      "external_id": "2004.11.22.01",
+      "state": "ignored",
+      "error": "ValueError: Video duration 1183.2s exceeds limit 600s"
+    },
+    {
+      "source": "archive",
+      "external_id": "20222251",
+      "state": "ignored",
+      "error": "ValueError: Archive item has no video within download size limit"
+    },
+    {
+      "source": "archive",
+      "external_id": "2151454545",
+      "state": "ignored",
+      "error": "ValueError: Archive item has no video within download size limit"
+    }
+  ]
+}

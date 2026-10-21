@@ -1,0 +1,23 @@
+# Initial production discovery is 2007-08-15 through 2012-12-31.
+# Dates can be overridden explicitly using discover --start / --end.
+[analysis]
+backend = "dinov2"
+interval = 2.0
+reference_interval = 0.25 # dense sampling of reference clips (cheap, large recall gain)
+batch_size = 128
+downloads = 30 # concurrent downloads (threads), capped per platform
+max_slots_per_source = 12 # concurrent downloads per platform (Archive is capped at 3)
+resume_paused = true # unattended: wait out platform pauses instead of exiting
+adaptive_pacing = true # per-platform download spacing climbs/backs off, see lostmedia/tuning.py
+processes = 6 # CPU decode/preprocess worker processes; 0 = min(12, cpus-2)
+device = "auto"
+crops = "fine" # 7 views + 8 small corner windows (picture-in-picture); see reports/validation-hard-*
+max_duration = 7200
+max_download_mb = 2048
+min_free_gb = 5
+lease_seconds = 300
+disk_budget_gb = 500
+delete_downloads = true
+keep_all_thumbnails = false
+feature_precision = "float16"
+campaign_through = "2007-08-31" # Audit hold: later periods require explicit change.

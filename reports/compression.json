@@ -1,0 +1,174 @@
+{
+  "vectors": 34874,
+  "queries": 84,
+  "dimensions": 768,
+  "results": [
+    {
+      "method": "float32",
+      "stored_vector_bytes": 107132928,
+      "bytes_per_vector": 3072.0,
+      "top10_overlap": 1.0,
+      "top1_agreement": 1.0,
+      "build_seconds": 1.8999999156221747e-06,
+      "query_seconds": 0.0842768000002252,
+      "detection": [
+        {
+          "case": 0,
+          "expected": true,
+          "detected": true,
+          "offset_error": 0.0
+        },
+        {
+          "case": 1,
+          "expected": true,
+          "detected": true,
+          "offset_error": 0.0
+        },
+        {
+          "case": 2,
+          "expected": true,
+          "detected": true,
+          "offset_error": 0.0
+        },
+        {
+          "case": 3,
+          "expected": true,
+          "detected": true,
+          "offset_error": 0.25
+        },
+        {
+          "case": 4,
+          "expected": false,
+          "detected": false,
+          "offset_error": null
+        }
+      ]
+    },
+    {
+      "method": "float16",
+      "stored_vector_bytes": 53566464,
+      "bytes_per_vector": 1536.0,
+      "top10_overlap": 0.9988095238095239,
+      "top1_agreement": 1.0,
+      "build_seconds": 0.13943029999973078,
+      "query_seconds": 0.09369460000016261,
+      "detection": [
+        {
+          "case": 0,
+          "expected": true,
+          "detected": true,
+          "offset_error": 0.0
+        },
+        {
+          "case": 1,
+          "expected": true,
+          "detected": true,
+          "offset_error": 0.0
+        },
+        {
+          "case": 2,
+          "expected": true,
+          "detected": true,
+          "offset_error": 0.0
+        },
+        {
+          "case": 3,
+          "expected": true,
+          "detected": true,
+          "offset_error": 0.25
+        },
+        {
+          "case": 4,
+          "expected": false,
+          "detected": false,
+          "offset_error": null
+        }
+      ]
+    },
+    {
+      "method": "int8",
+      "stored_vector_bytes": 26922728,
+      "bytes_per_vector": 772.0,
+      "top10_overlap": 0.9964285714285713,
+      "top1_agreement": 0.9880952380952381,
+      "build_seconds": 0.14931070000056934,
+      "query_seconds": 0.08339720000003581,
+      "detection": [
+        {
+          "case": 0,
+          "expected": true,
+          "detected": true,
+          "offset_error": 0.0
+        },
+        {
+          "case": 1,
+          "expected": true,
+          "detected": true,
+          "offset_error": 0.0
+        },
+        {
+          "case": 2,
+          "expected": true,
+          "detected": true,
+          "offset_error": 0.0
+        },
+        {
+          "case": 3,
+          "expected": true,
+          "detected": true,
+          "offset_error": 0.25
+        },
+        {
+          "case": 4,
+          "expected": false,
+          "detected": false,
+          "offset_error": null
+        }
+      ]
+    },
+    {
+      "method": "pq96x8",
+      "stored_vector_bytes": 4134422,
+      "bytes_per_vector": 118.55313414004702,
+      "top10_overlap": 0.819047619047619,
+      "top1_agreement": 0.6666666666666666,
+      "build_seconds": 26.02026029999979,
+      "query_seconds": 0.04893160000028729,
+      "detection": [
+        {
+          "case": 0,
+          "expected": true,
+          "detected": true,
+          "offset_error": 0.0
+        },
+        {
+          "case": 1,
+          "expected": true,
+          "detected": true,
+          "offset_error": 0.0
+        },
+        {
+          "case": 2,
+          "expected": true,
+          "detected": false,
+          "offset_error": null
+        },
+        {
+          "case": 3,
+          "expected": true,
+          "detected": true,
+          "offset_error": 0.25
+        },
+        {
+          "case": 4,
+          "expected": false,
+          "detected": false,
+          "offset_error": null
+        }
+      ]
+    }
+  ],
+  "real_video_feature_files": 67,
+  "scope": "Controlled BSS positives plus real 2007 platform videos as distractors. Real features were already FP16 on disk; planted features retain original FP32. This is not representative of the whole public web. PQ trains on the candidate corpus; query frames come from the clean reference. Float16/int8 sizes are payload only; FAISS Flat expands to float32 in RAM.",
+  "default": "float16; do not switch to PQ by default without independent large-scale recall evaluation"
+}

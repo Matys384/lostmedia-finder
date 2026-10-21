@@ -1,0 +1,1905 @@
+{
+  "period": {
+    "start": "2007-08-15",
+    "end": "2007-08-31",
+    "state": "active"
+  },
+  "generated": "2026-10-21 16:54:56",
+  "discovered": {
+    "archive": 2115,
+    "dailymotion": 28126,
+    "youtube": 1603
+  },
+  "windows": [
+    {
+      "provider": "archive",
+      "state": "exhausted",
+      "windows": 1,
+      "pages": 38
+    },
+    {
+      "provider": "dailymotion",
+      "state": "exhausted",
+      "windows": 90,
+      "pages": 280
+    },
+    {
+      "provider": "dailymotion",
+      "state": "pending",
+      "windows": 12,
+      "pages": 25
+    },
+    {
+      "provider": "dailymotion",
+      "state": "split",
+      "windows": 21,
+      "pages": 210
+    },
+    {
+      "provider": "youtube",
+      "state": "exhausted",
+      "windows": 30,
+      "pages": 56
+    }
+  ],
+  "open_or_saturated_windows": [
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-29T08",
+      "end": "2007-08-29T11",
+      "query": "",
+      "pages": 3,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-29T12",
+      "end": "2007-08-29T15",
+      "query": "",
+      "pages": 3,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-29T16",
+      "end": "2007-08-29T19",
+      "query": "",
+      "pages": 3,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-29T20",
+      "end": "2007-08-29T23",
+      "query": "",
+      "pages": 3,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-30T08",
+      "end": "2007-08-30T11",
+      "query": "",
+      "pages": 3,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-30T12",
+      "end": "2007-08-30T15",
+      "query": "",
+      "pages": 2,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-30T16",
+      "end": "2007-08-30T19",
+      "query": "",
+      "pages": 2,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-30T20",
+      "end": "2007-08-30T23",
+      "query": "",
+      "pages": 2,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-31T08",
+      "end": "2007-08-31T11",
+      "query": "",
+      "pages": 1,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-31T12",
+      "end": "2007-08-31T15",
+      "query": "",
+      "pages": 1,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-31T16",
+      "end": "2007-08-31T19",
+      "query": "",
+      "pages": 1,
+      "state": "pending",
+      "error": null
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-31T20",
+      "end": "2007-08-31T23",
+      "query": "",
+      "pages": 1,
+      "state": "pending",
+      "error": null
+    }
+  ],
+  "api_reported_totals": [
+    {
+      "provider": "archive",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "query": "",
+      "total": 2115,
+      "endpoint": "advancedsearch"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-15",
+      "end": "2007-08-15",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-15",
+      "end": "2007-08-21",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-15 00:00:00+00:00",
+      "end": "2007-08-15 03:00:00+00:00",
+      "query": "",
+      "total": 72,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-15 04:00:00+00:00",
+      "end": "2007-08-15 07:00:00+00:00",
+      "query": "",
+      "total": 58,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-15 08:00:00+00:00",
+      "end": "2007-08-15 11:00:00+00:00",
+      "query": "",
+      "total": 360,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-15 12:00:00+00:00",
+      "end": "2007-08-15 15:00:00+00:00",
+      "query": "",
+      "total": 410,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-15 16:00:00+00:00",
+      "end": "2007-08-15 19:00:00+00:00",
+      "query": "",
+      "total": 403,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-15 20:00:00+00:00",
+      "end": "2007-08-15 23:00:00+00:00",
+      "query": "",
+      "total": 308,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-16",
+      "end": "2007-08-16",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-16 00:00:00+00:00",
+      "end": "2007-08-16 03:00:00+00:00",
+      "query": "",
+      "total": 47,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-16 04:00:00+00:00",
+      "end": "2007-08-16 07:00:00+00:00",
+      "query": "",
+      "total": 92,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-16 08:00:00+00:00",
+      "end": "2007-08-16 11:00:00+00:00",
+      "query": "",
+      "total": 285,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-16 12:00:00+00:00",
+      "end": "2007-08-16 15:00:00+00:00",
+      "query": "",
+      "total": 424,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-16 16:00:00+00:00",
+      "end": "2007-08-16 19:00:00+00:00",
+      "query": "",
+      "total": 240,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-16 20:00:00+00:00",
+      "end": "2007-08-16 23:00:00+00:00",
+      "query": "",
+      "total": 291,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-17",
+      "end": "2007-08-17",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-17 00:00:00+00:00",
+      "end": "2007-08-17 03:00:00+00:00",
+      "query": "",
+      "total": 63,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-17 04:00:00+00:00",
+      "end": "2007-08-17 07:00:00+00:00",
+      "query": "",
+      "total": 94,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-17 08:00:00+00:00",
+      "end": "2007-08-17 11:00:00+00:00",
+      "query": "",
+      "total": 291,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-17 12:00:00+00:00",
+      "end": "2007-08-17 15:00:00+00:00",
+      "query": "",
+      "total": 383,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-17 16:00:00+00:00",
+      "end": "2007-08-17 19:00:00+00:00",
+      "query": "",
+      "total": 356,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-17 20:00:00+00:00",
+      "end": "2007-08-17 23:00:00+00:00",
+      "query": "",
+      "total": 241,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-18",
+      "end": "2007-08-18",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-18 00:00:00+00:00",
+      "end": "2007-08-18 03:00:00+00:00",
+      "query": "",
+      "total": 57,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-18 04:00:00+00:00",
+      "end": "2007-08-18 07:00:00+00:00",
+      "query": "",
+      "total": 52,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-18 08:00:00+00:00",
+      "end": "2007-08-18 11:00:00+00:00",
+      "query": "",
+      "total": 309,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-18 12:00:00+00:00",
+      "end": "2007-08-18 15:00:00+00:00",
+      "query": "",
+      "total": 331,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-18 16:00:00+00:00",
+      "end": "2007-08-18 19:00:00+00:00",
+      "query": "",
+      "total": 337,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-18 20:00:00+00:00",
+      "end": "2007-08-18 23:00:00+00:00",
+      "query": "",
+      "total": 231,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-19",
+      "end": "2007-08-19",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-19 00:00:00+00:00",
+      "end": "2007-08-19 03:00:00+00:00",
+      "query": "",
+      "total": 76,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-19 04:00:00+00:00",
+      "end": "2007-08-19 07:00:00+00:00",
+      "query": "",
+      "total": 39,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-19 08:00:00+00:00",
+      "end": "2007-08-19 11:00:00+00:00",
+      "query": "",
+      "total": 332,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-19 12:00:00+00:00",
+      "end": "2007-08-19 15:00:00+00:00",
+      "query": "",
+      "total": 489,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-19 16:00:00+00:00",
+      "end": "2007-08-19 19:00:00+00:00",
+      "query": "",
+      "total": 447,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-19 20:00:00+00:00",
+      "end": "2007-08-19 23:00:00+00:00",
+      "query": "",
+      "total": 323,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-20",
+      "end": "2007-08-20",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-20 00:00:00+00:00",
+      "end": "2007-08-20 03:00:00+00:00",
+      "query": "",
+      "total": 64,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-20 04:00:00+00:00",
+      "end": "2007-08-20 07:00:00+00:00",
+      "query": "",
+      "total": 92,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-20 08:00:00+00:00",
+      "end": "2007-08-20 11:00:00+00:00",
+      "query": "",
+      "total": 396,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-20 12:00:00+00:00",
+      "end": "2007-08-20 15:00:00+00:00",
+      "query": "",
+      "total": 396,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-20 16:00:00+00:00",
+      "end": "2007-08-20 19:00:00+00:00",
+      "query": "",
+      "total": 292,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-20 20:00:00+00:00",
+      "end": "2007-08-20 23:00:00+00:00",
+      "query": "",
+      "total": 402,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-21",
+      "end": "2007-08-21",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-21 00:00:00+00:00",
+      "end": "2007-08-21 03:00:00+00:00",
+      "query": "",
+      "total": 70,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-21 04:00:00+00:00",
+      "end": "2007-08-21 07:00:00+00:00",
+      "query": "",
+      "total": 80,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-21 08:00:00+00:00",
+      "end": "2007-08-21 11:00:00+00:00",
+      "query": "",
+      "total": 382,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-21 12:00:00+00:00",
+      "end": "2007-08-21 15:00:00+00:00",
+      "query": "",
+      "total": 363,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-21 16:00:00+00:00",
+      "end": "2007-08-21 19:00:00+00:00",
+      "query": "",
+      "total": 451,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-21 20:00:00+00:00",
+      "end": "2007-08-21 23:00:00+00:00",
+      "query": "",
+      "total": 447,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-22",
+      "end": "2007-08-22",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-22",
+      "end": "2007-08-28",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-22 00:00:00+00:00",
+      "end": "2007-08-22 03:00:00+00:00",
+      "query": "",
+      "total": 50,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-22 04:00:00+00:00",
+      "end": "2007-08-22 07:00:00+00:00",
+      "query": "",
+      "total": 85,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-22 08:00:00+00:00",
+      "end": "2007-08-22 11:00:00+00:00",
+      "query": "",
+      "total": 316,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-22 12:00:00+00:00",
+      "end": "2007-08-22 15:00:00+00:00",
+      "query": "",
+      "total": 445,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-22 16:00:00+00:00",
+      "end": "2007-08-22 19:00:00+00:00",
+      "query": "",
+      "total": 514,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-22 20:00:00+00:00",
+      "end": "2007-08-22 23:00:00+00:00",
+      "query": "",
+      "total": 360,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-23",
+      "end": "2007-08-23",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-23 00:00:00+00:00",
+      "end": "2007-08-23 03:00:00+00:00",
+      "query": "",
+      "total": 78,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-23 04:00:00+00:00",
+      "end": "2007-08-23 07:00:00+00:00",
+      "query": "",
+      "total": 90,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-23 08:00:00+00:00",
+      "end": "2007-08-23 11:00:00+00:00",
+      "query": "",
+      "total": 369,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-23 12:00:00+00:00",
+      "end": "2007-08-23 15:00:00+00:00",
+      "query": "",
+      "total": 541,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-23 16:00:00+00:00",
+      "end": "2007-08-23 19:00:00+00:00",
+      "query": "",
+      "total": 474,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-23 20:00:00+00:00",
+      "end": "2007-08-23 23:00:00+00:00",
+      "query": "",
+      "total": 339,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-24",
+      "end": "2007-08-24",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-24 00:00:00+00:00",
+      "end": "2007-08-24 03:00:00+00:00",
+      "query": "",
+      "total": 61,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-24 04:00:00+00:00",
+      "end": "2007-08-24 07:00:00+00:00",
+      "query": "",
+      "total": 157,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-24 08:00:00+00:00",
+      "end": "2007-08-24 11:00:00+00:00",
+      "query": "",
+      "total": 389,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-24 12:00:00+00:00",
+      "end": "2007-08-24 15:00:00+00:00",
+      "query": "",
+      "total": 412,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-24 16:00:00+00:00",
+      "end": "2007-08-24 19:00:00+00:00",
+      "query": "",
+      "total": 327,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-24 20:00:00+00:00",
+      "end": "2007-08-24 23:00:00+00:00",
+      "query": "",
+      "total": 287,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-25",
+      "end": "2007-08-25",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-25 00:00:00+00:00",
+      "end": "2007-08-25 03:00:00+00:00",
+      "query": "",
+      "total": 71,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-25 04:00:00+00:00",
+      "end": "2007-08-25 07:00:00+00:00",
+      "query": "",
+      "total": 50,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-25 08:00:00+00:00",
+      "end": "2007-08-25 11:00:00+00:00",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-25 12:00:00+00:00",
+      "end": "2007-08-25 15:00:00+00:00",
+      "query": "",
+      "total": 449,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-25 16:00:00+00:00",
+      "end": "2007-08-25 19:00:00+00:00",
+      "query": "",
+      "total": 405,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-25 20:00:00+00:00",
+      "end": "2007-08-25 23:00:00+00:00",
+      "query": "",
+      "total": 306,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-26",
+      "end": "2007-08-26",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-26 00:00:00+00:00",
+      "end": "2007-08-26 03:00:00+00:00",
+      "query": "",
+      "total": 107,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-26 04:00:00+00:00",
+      "end": "2007-08-26 07:00:00+00:00",
+      "query": "",
+      "total": 52,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-26 08:00:00+00:00",
+      "end": "2007-08-26 11:00:00+00:00",
+      "query": "",
+      "total": 320,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-26 12:00:00+00:00",
+      "end": "2007-08-26 15:00:00+00:00",
+      "query": "",
+      "total": 559,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-26 16:00:00+00:00",
+      "end": "2007-08-26 19:00:00+00:00",
+      "query": "",
+      "total": 533,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-26 20:00:00+00:00",
+      "end": "2007-08-26 23:00:00+00:00",
+      "query": "",
+      "total": 366,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-27",
+      "end": "2007-08-27",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-27 00:00:00+00:00",
+      "end": "2007-08-27 03:00:00+00:00",
+      "query": "",
+      "total": 78,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-27 04:00:00+00:00",
+      "end": "2007-08-27 07:00:00+00:00",
+      "query": "",
+      "total": 93,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-27 08:00:00+00:00",
+      "end": "2007-08-27 11:00:00+00:00",
+      "query": "",
+      "total": 397,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-27 12:00:00+00:00",
+      "end": "2007-08-27 15:00:00+00:00",
+      "query": "",
+      "total": 488,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-27 16:00:00+00:00",
+      "end": "2007-08-27 19:00:00+00:00",
+      "query": "",
+      "total": 514,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-27 20:00:00+00:00",
+      "end": "2007-08-27 23:00:00+00:00",
+      "query": "",
+      "total": 353,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-28",
+      "end": "2007-08-28",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-28 00:00:00+00:00",
+      "end": "2007-08-28 03:00:00+00:00",
+      "query": "",
+      "total": 68,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-28 04:00:00+00:00",
+      "end": "2007-08-28 07:00:00+00:00",
+      "query": "",
+      "total": 117,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-28 08:00:00+00:00",
+      "end": "2007-08-28 11:00:00+00:00",
+      "query": "",
+      "total": 402,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-28 12:00:00+00:00",
+      "end": "2007-08-28 15:00:00+00:00",
+      "query": "",
+      "total": 469,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-28 16:00:00+00:00",
+      "end": "2007-08-28 19:00:00+00:00",
+      "query": "",
+      "total": 496,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-28 20:00:00+00:00",
+      "end": "2007-08-28 23:00:00+00:00",
+      "query": "",
+      "total": 378,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-29",
+      "end": "2007-08-29",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-29",
+      "end": "2007-08-31",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-29 00:00:00+00:00",
+      "end": "2007-08-29 03:00:00+00:00",
+      "query": "",
+      "total": 58,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-29 04:00:00+00:00",
+      "end": "2007-08-29 07:00:00+00:00",
+      "query": "",
+      "total": 82,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-29 08:00:00+00:00",
+      "end": "2007-08-29 11:00:00+00:00",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-29 12:00:00+00:00",
+      "end": "2007-08-29 15:00:00+00:00",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-29 16:00:00+00:00",
+      "end": "2007-08-29 19:00:00+00:00",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-29 20:00:00+00:00",
+      "end": "2007-08-29 23:00:00+00:00",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-30",
+      "end": "2007-08-30",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-30 00:00:00+00:00",
+      "end": "2007-08-30 03:00:00+00:00",
+      "query": "",
+      "total": 105,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-30 04:00:00+00:00",
+      "end": "2007-08-30 07:00:00+00:00",
+      "query": "",
+      "total": 90,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-30 08:00:00+00:00",
+      "end": "2007-08-30 11:00:00+00:00",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-30 12:00:00+00:00",
+      "end": "2007-08-30 15:00:00+00:00",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-30 16:00:00+00:00",
+      "end": "2007-08-30 19:00:00+00:00",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-30 20:00:00+00:00",
+      "end": "2007-08-30 23:00:00+00:00",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "dailymotion",
+      "start": "2007-08-31",
+      "end": "2007-08-31",
+      "query": "",
+      "total": 0,
+      "endpoint": "videos (total may be capped)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-15",
+      "query": "",
+      "total": 827168,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "query": "",
+      "total": 1000000,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "query": "animation",
+      "total": 292531,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "query": "concert",
+      "total": 717355,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "query": "dance",
+      "total": 605046,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "query": "documentary",
+      "total": 824218,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "query": "funny",
+      "total": 504280,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "query": "gameplay",
+      "total": 181280,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "query": "interview",
+      "total": 547650,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "query": "music",
+      "total": 1000000,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "query": "news",
+      "total": 443239,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "query": "sports",
+      "total": 336313,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "query": "tutorial",
+      "total": 475864,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-15",
+      "end": "2007-08-31",
+      "query": "vlog",
+      "total": 41447,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-16",
+      "end": "2007-08-16",
+      "query": "",
+      "total": 827172,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-17",
+      "end": "2007-08-17",
+      "query": "",
+      "total": 827170,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-18",
+      "end": "2007-08-18",
+      "query": "",
+      "total": 827172,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-19",
+      "end": "2007-08-19",
+      "query": "",
+      "total": 827172,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-20",
+      "end": "2007-08-20",
+      "query": "",
+      "total": 654678,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-21",
+      "end": "2007-08-21",
+      "query": "",
+      "total": 827174,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-22",
+      "end": "2007-08-22",
+      "query": "",
+      "total": 827168,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-23",
+      "end": "2007-08-23",
+      "query": "",
+      "total": 827172,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-24",
+      "end": "2007-08-24",
+      "query": "",
+      "total": 1000000,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-25",
+      "end": "2007-08-25",
+      "query": "",
+      "total": 840198,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-26",
+      "end": "2007-08-26",
+      "query": "",
+      "total": 840194,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-27",
+      "end": "2007-08-27",
+      "query": "",
+      "total": 840198,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-28",
+      "end": "2007-08-28",
+      "query": "",
+      "total": 840196,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-29",
+      "end": "2007-08-29",
+      "query": "",
+      "total": 671480,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-30",
+      "end": "2007-08-30",
+      "query": "",
+      "total": 840196,
+      "endpoint": "search.list (estimated total)"
+    },
+    {
+      "provider": "youtube",
+      "start": "2007-08-31",
+      "end": "2007-08-31",
+      "query": "",
+      "total": 840194,
+      "endpoint": "search.list (estimated total)"
+    }
+  ],
+  "discovery_methods": [
+    {
+      "provider": "archive",
+      "method": "chronological",
+      "calls": 38,
+      "returned": 3715,
+      "new": 2115,
+      "seconds": 97.39399999999841
+    },
+    {
+      "provider": "dailymotion",
+      "method": "chronological",
+      "calls": 515,
+      "returned": 47531,
+      "new": 28126,
+      "seconds": 1013.6090000000149
+    },
+    {
+      "provider": "youtube",
+      "method": "broad-topic",
+      "calls": 12,
+      "returned": 598,
+      "new": 568,
+      "seconds": 18.938999999998487
+    },
+    {
+      "provider": "youtube",
+      "method": "chronological",
+      "calls": 27,
+      "returned": 1035,
+      "new": 874,
+      "seconds": 33.6200000000008
+    },
+    {
+      "provider": "youtube",
+      "method": "daily-partition",
+      "calls": 17,
+      "returned": 234,
+      "new": 155,
+      "seconds": 18.3899999999976
+    },
+    {
+      "provider": "youtube",
+      "method": "playlist",
+      "calls": 1,
+      "returned": 47,
+      "new": 6,
+      "seconds": 1.5159999999996217
+    }
+  ],
+  "discovery_quality": [
+    {
+      "provider": "dailymotion",
+      "method": "chronological",
+      "calls": 449,
+      "returned": 40931,
+      "new": 21526,
+      "duplicates": 19405,
+      "filtered": 0
+    },
+    {
+      "provider": "youtube",
+      "method": "chronological",
+      "calls": 24,
+      "returned": 900,
+      "new": 776,
+      "duplicates": 124,
+      "filtered": 0
+    }
+  ],
+  "youtube_api_calls_by_day": [
+    {
+      "day": "2026-10-21",
+      "calls": 62
+    }
+  ],
+  "states": {
+    "archive": {
+      "done": 294,
+      "queued": 1663,
+      "running": 0,
+      "failed": 0,
+      "deferred": 126,
+      "ignored": 15,
+      "restricted": 15,
+      "inaccessible": 2
+    },
+    "dailymotion": {
+      "done": 527,
+      "queued": 27594,
+      "running": 1,
+      "failed": 2,
+      "deferred": 0,
+      "ignored": 2,
+      "restricted": 0,
+      "inaccessible": 0
+    },
+    "youtube": {
+      "done": 0,
+      "queued": 1565,
+      "running": 0,
+      "failed": 0,
+      "deferred": 8,
+      "ignored": 0,
+      "restricted": 11,
+      "inaccessible": 19
+    }
+  },
+  "errors": [
+    {
+      "provider": "archive",
+      "state": "deferred",
+      "error": "Archive item video duration limit exceeded before download (limits 300 MB / 1800 s)",
+      "n": 100
+    },
+    {
+      "provider": "archive",
+      "state": "restricted",
+      "error": "ValueError: Archive item video files are access-restricted",
+      "n": 15
+    },
+    {
+      "provider": "archive",
+      "state": "deferred",
+      "error": "Archive item has no video within download size limit (limits 300 MB / 1800 s)",
+      "n": 14
+    },
+    {
+      "provider": "archive",
+      "state": "ignored",
+      "error": "ValueError: Archive item has no video file (unsupported item)",
+      "n": 13
+    },
+    {
+      "provider": "youtube",
+      "state": "deferred",
+      "error": "Download unavailable or exceeds configured limits (limits 300 MB / 1800 s)",
+      "n": 8
+    },
+    {
+      "provider": "dailymotion",
+      "state": "ignored",
+      "error": "RuntimeError: Download unavailable or exceeds configured limits",
+      "n": 2
+    },
+    {
+      "provider": "youtube",
+      "state": "inaccessible",
+      "error": "DownloadError: ERROR: unable to download video data: HTTP Error 403: Forbidden",
+      "n": 2
+    },
+    {
+      "provider": "archive",
+      "state": "deferred",
+      "error": "Video duration 13835.9s exceeds limit 1800s (limits 300 MB / 1800 s)",
+      "n": 1
+    },
+    {
+      "provider": "archive",
+      "state": "deferred",
+      "error": "Video duration 1866.1s exceeds limit 1800s (limits 300 MB / 1800 s)",
+      "n": 1
+    },
+    {
+      "provider": "archive",
+      "state": "deferred",
+      "error": "Video duration 2030.5s exceeds limit 1800s (limits 300 MB / 1800 s)",
+      "n": 1
+    },
+    {
+      "provider": "archive",
+      "state": "deferred",
+      "error": "Video duration 2343.1s exceeds limit 1800s (limits 300 MB / 1800 s)",
+      "n": 1
+    },
+    {
+      "provider": "archive",
+      "state": "deferred",
+      "error": "Video duration 2908.4s exceeds limit 1800s (limits 300 MB / 1800 s)",
+      "n": 1
+    },
+    {
+      "provider": "archive",
+      "state": "deferred",
+      "error": "Video duration 3454.2s exceeds limit 1800s (limits 300 MB / 1800 s)",
+      "n": 1
+    },
+    {
+      "provider": "archive",
+      "state": "deferred",
+      "error": "Video duration 3919.5s exceeds limit 1800s (limits 300 MB / 1800 s)",
+      "n": 1
+    },
+    {
+      "provider": "archive",
+      "state": "deferred",
+      "error": "Video duration 4273.4s exceeds limit 1800s (limits 300 MB / 1800 s)",
+      "n": 1
+    },
+    {
+      "provider": "archive",
+      "state": "deferred",
+      "error": "Video duration 4846.5s exceeds limit 1800s (limits 300 MB / 1800 s)",
+      "n": 1
+    },
+    {
+      "provider": "archive",
+      "state": "deferred",
+      "error": "Video duration 5137.3s exceeds limit 1800s (limits 300 MB / 1800 s)",
+      "n": 1
+    },
+    {
+      "provider": "archive",
+      "state": "deferred",
+      "error": "Video duration 5420.1s exceeds limit 1800s (limits 300 MB / 1800 s)",
+      "n": 1
+    },
+    {
+      "provider": "archive",
+      "state": "deferred",
+      "error": "Video duration 9742.1s exceeds limit 1800s (limits 300 MB / 1800 s)",
+      "n": 1
+    },
+    {
+      "provider": "archive",
+      "state": "ignored",
+      "error": "ValueError: Video duration 1183.2s exceeds limit 600s",
+      "n": 1
+    },
+    {
+      "provider": "archive",
+      "state": "ignored",
+      "error": "ValueError: Video duration 902.6s exceeds limit 600s",
+      "n": 1
+    },
+    {
+      "provider": "archive",
+      "state": "inaccessible",
+      "error": "DownloadError: ERROR: [generic] aqr_512kb: Unable to download webpage: HTTP Error 403: For",
+      "n": 1
+    },
+    {
+      "provider": "archive",
+      "state": "inaccessible",
+      "error": "DownloadError: ERROR: [generic] wmv_512kb: Unable to download webpage: HTTP Error 403: For",
+      "n": 1
+    },
+    {
+      "provider": "dailymotion",
+      "state": "failed",
+      "error": "DownloadError: ERROR: [dailymotion] x2vmid: dailymotion said: Pas de vidéo sélectionnée.",
+      "n": 1
+    },
+    {
+      "provider": "dailymotion",
+      "state": "failed",
+      "error": "DownloadError: ERROR: [dailymotion] x2vn0m: dailymotion said: Content is not available",
+      "n": 1
+    },
+    {
+      "provider": "youtube",
+      "state": "inaccessible",
+      "error": "DownloadError: ERROR: [youtube] 2D-1F2GS0Eg: This video is not available",
+      "n": 1
+    },
+    {
+      "provider": "youtube",
+      "state": "inaccessible",
+      "error": "DownloadError: ERROR: [youtube] 6ozi4os5KFs: This video is not available",
+      "n": 1
+    },
+    {
+      "provider": "youtube",
+      "state": "inaccessible",
+      "error": "DownloadError: ERROR: [youtube] 6uq9-qWYnuQ: This video is not available",
+      "n": 1
+    },
+    {
+      "provider": "youtube",
+      "state": "inaccessible",
+      "error": "DownloadError: ERROR: [youtube] 7_08uolx0BA: This video is not available",
+      "n": 1
+    },
+    {
+      "provider": "youtube",
+      "state": "inaccessible",
+      "error": "DownloadError: ERROR: [youtube] 9PqaNj26xLs: This video is not available",
+      "n": 1
+    },
+    {
+      "provider": "youtube",
+      "state": "inaccessible",
+      "error": "DownloadError: ERROR: [youtube] IyQf_HUpKYw: This video is not available",
+      "n": 1
+    },
+    {
+      "provider": "youtube",
+      "state": "inaccessible",
+      "error": "DownloadError: ERROR: [youtube] SMAixgo_zJ4: This video is not available",
+      "n": 1
+    },
+    {
+      "provider": "youtube",
+      "state": "inaccessible",
+      "error": "DownloadError: ERROR: [youtube] UcctwbAckBo: This video is not available",
+      "n": 1
+    },
+    {
+      "provider": "youtube",
+      "state": "inaccessible",
+      "error": "DownloadError: ERROR: [youtube] YlK6KvJ1g1A: This video is not available",
+      "n": 1
+    },
+    {
+      "provider": "youtube",
+      "state": "inaccessible",
+      "error": "DownloadError: ERROR: [youtube] ajd5kK8zDY0: This video is not available",
+      "n": 1
+    },
+    {
+      "provider": "youtube",
+      "state": "inaccessible",
+      "error": "DownloadError: ERROR: [youtube] bCDzW0l2DO4: This video is not available",
+      "n": 1
+    },
+    {
+      "provider": "youtube",
+      "state": "inaccessible",
+      "error": "DownloadError: ERROR: [youtube] c3v0rJqyCTM: This video is not available",
+      "n": 1
+    },
+    {
+      "provider": "youtube",
+      "state": "inaccessible",
+      "error": "DownloadError: ERROR: [youtube] cWRIR39N8WA: This video is not available",
+      "n": 1
+    },
+    {
+      "provider": "youtube",
+      "state": "inaccessible",
+      "error": "DownloadError: ERROR: [youtube] dE--4tiB5f8: This video is not available",
+      "n": 1
+    },
+    {
+      "provider": "youtube",
+      "state": "inaccessible",
+      "error": "DownloadError: ERROR: [youtube] fvFtmYa05CY: This video is not available",
+      "n": 1
+    }
+  ],
+  "stages": [
+    {
+      "source": "dailymotion",
+      "videos": 1068,
+      "download_s": 14.771786516853982,
+      "decode_s": 0.9430677966101323,
+      "gpu_s": 0.5990466101695686,
+      "match_s": 0.04904681647940038,
+      "media_bytes": 5777031.350187266,
+      "feature_bytes": 756420.3267790262,
+      "views": 538.7968164794007
+    },
+    {
+      "source": "youtube",
+      "videos": 696,
+      "download_s": 15.284981321839073,
+      "decode_s": null,
+      "gpu_s": null,
+      "match_s": 0.09061063218392185,
+      "media_bytes": 7591705.968390805,
+      "feature_bytes": 1155067.3951149425,
+      "views": 823.8477011494252
+    }
+  ],
+  "download_attempts": [
+    {
+      "source": "dailymotion",
+      "spacing": 2.0,
+      "outcome": "content",
+      "n": 4,
+      "seconds": 1.9407499999997526
+    },
+    {
+      "source": "dailymotion",
+      "spacing": 2.0,
+      "outcome": "ok",
+      "n": 222,
+      "seconds": 7.798630630630771
+    },
+    {
+      "source": "dailymotion",
+      "spacing": 1.5,
+      "outcome": "ok",
+      "n": 25,
+      "seconds": 7.407720000000263
+    },
+    {
+      "source": "youtube",
+      "spacing": 3.0,
+      "outcome": "throttled",
+      "n": 1,
+      "seconds": 0.0
+    }
+  ],
+  "download_attempts_by_hour": [
+    {
+      "source": "dailymotion",
+      "hour": "2026-10-21 16:00",
+      "attempts": 251,
+      "ok": 247,
+      "throttled": 0,
+      "transient": 0
+    },
+    {
+      "source": "youtube",
+      "hour": "2026-10-21 16:00",
+      "attempts": 1,
+      "ok": 0,
+      "throttled": 1,
+      "transient": 0
+    }
+  ],
+  "pacing": {
+    "youtube": {
+      "spacing": 4.0,
+      "stable": 4.0,
+      "fastest_allowed": 4.0,
+      "throttles": 1,
+      "history": [
+        {
+          "at": 1792593418.9663668,
+          "from": 3.0,
+          "to": 4.0,
+          "reason": "throttled at 3.0s: Sign in to confirm you’re not a bot (observed 16:29 at 3 s, ~8 parallel)"
+        }
+      ]
+    },
+    "dailymotion": {
+      "spacing": 1.5,
+      "stable": 2.0,
+      "fastest_allowed": 0.5,
+      "throttles": 0,
+      "history": [
+        {
+          "at": 1792593899.615986,
+          "from": 2.0,
+          "to": 1.5,
+          "reason": "stable at 2.0s, trying faster"
+        }
+      ]
+    },
+    "archive": {
+      "spacing": 1.5,
+      "stable": 1.5,
+      "fastest_allowed": 1.5,
+      "throttles": 0,
+      "history": []
+    }
+  },
+  "matches": [
+    {
+      "source": "archive",
+      "external_id": "E.T.V.U.F.O.AUGUST26TH-27TH2007",
+      "title": "Haus 33 E.T.V.U.F.O.AUGUST26TH-27TH2007",
+      "score": 0.60875,
+      "status": "visual_candidate",
+      "frames": 0,
+      "offset": null
+    },
+    {
+      "source": "archive",
+      "external_id": "Choronzon333-VeilOfThornsEnshroudVideo249-4",
+      "title": "Veil Of Thorns Enshroud Video",
+      "score": 0.5884375000000001,
+      "status": "visual_candidate",
+      "frames": 0,
+      "offset": null
+    },
+    {
+      "source": "archive",
+      "external_id": "DariosTangoGuide15",
+      "title": "Dario's Tango Guide 15",
+      "score": 0.5884375000000001,
+      "status": "visual_candidate",
+      "frames": 0,
+      "offset": null
+    },
+    {
+      "source": "dailymotion",
+      "external_id": "x2vmcq",
+      "title": "Navette launch super version",
+      "score": 0.5884375000000001,
+      "status": "visual_candidate",
+      "frames": 0,
+      "offset": null
+    },
+    {
+      "source": "dailymotion",
+      "external_id": "x2vlec",
+      "title": "MOV00001",
+      "score": 0.5884375000000001,
+      "status": "visual_candidate",
+      "frames": 0,
+      "offset": null
+    },
+    {
+      "source": "archive",
+      "external_id": "Consolevania-01x06-The_Xmas_Special",
+      "title": "Consolevania S01 E06 \"The Xmas Special\"",
+      "score": 0.5849266076087952,
+      "status": "visual_candidate",
+      "frames": 0,
+      "offset": null
+    }
+  ],
+  "validation": {
+    "validation-hard-dinov2-2s-ref0.25-fine": {
+      "interval": 2.0,
+      "reference_interval": 0.25,
+      "crops": "fine",
+      "positives": 19,
+      "negatives": 8,
+      "recall_at_2_seconds": 0.8421052631578947,
+      "false_positives": 0,
+      "missed": [
+        "pip35_mirror",
+        "pip25_tiny",
+        "excerpt5s"
+      ]
+    },
+    "validation-hard-dinov2-2s-ref0.25-true": {
+      "interval": 2.0,
+      "reference_interval": null,
+      "crops": null,
+      "positives": 19,
+      "negatives": 8,
+      "recall_at_2_seconds": 0.7368421052631579,
+      "false_positives": 0,
+      "missed": [
+        "pip35_corner",
+        "pip35_mirror",
+        "pip25_tiny",
+        "excerpt5s",
+        "in_sm64_pip_mirror"
+      ]
+    },
+    "validation-hard-dinov2-2s-ref2-true": {
+      "interval": 2.0,
+      "reference_interval": 2.0,
+      "crops": "true",
+      "positives": 19,
+      "negatives": 8,
+      "recall_at_2_seconds": 0.2631578947368421,
+      "false_positives": 0,
+      "missed": [
+        "crop20_crf36",
+        "pip65",
+        "pip35_corner",
+        "pip35_mirror",
+        "pip25_tiny",
+        "lowres_crf45",
+        "letterbox_169",
+        "speed150",
+        "excerpt5s",
+        "cut_middle",
+        "in_sm64_0",
+        "in_sm64_1",
+        "in_sm64_2",
+        "in_sm64_pip_mirror"
+      ]
+    }
+  }
+}

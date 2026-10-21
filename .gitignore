@@ -1,0 +1,13 @@
+.venv/
+data/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+.env
+*.log
+
+
+.venv-wsl/
+
+# CI workflow kept locally until the GitHub token has the workflow scope.
+.github/
