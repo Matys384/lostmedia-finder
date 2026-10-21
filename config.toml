@@ -7,6 +7,7 @@ reference_interval = 0.25 # dense sampling of reference clips (cheap, large reca
 batch_size = 128
 downloads = 30 # concurrent downloads (threads), capped per platform
 max_slots_per_source = 12 # concurrent downloads per platform (Archive is capped at 3)
+thumbnail_only_sources = ["youtube"] # never download these videos; compare API thumbnails only
 resume_paused = true # unattended: wait out platform pauses instead of exiting
 adaptive_pacing = true # per-platform download spacing climbs/backs off, see lostmedia/tuning.py
 processes = 6 # CPU decode/preprocess worker processes; 0 = min(12, cpus-2)

@@ -59,6 +59,19 @@ YOUTUBE_COSTS={"search":100,"videos":1,"playlistItems":1,"channels":1}
 YOUTUBE_DAILY_UNITS=int(os.environ.get("YOUTUBE_DAILY_UNITS","9500"))
 
 
+class QuotaExhausted(Cooldown):
+    """Daily API budget spent: work waits for the reset, it is not a failure."""
+
+    def __init__(self, message, pause):
+        super().__init__(message)
+        self.pause = pause
+
+
+def seconds_to_quota_reset():
+    now = datetime.now(timezone.utc)-timedelta(hours=8)
+    return max(60, (datetime(now.year, now.month, now.day, tzinfo=timezone.utc)+timedelta(days=1)-now).total_seconds()+60)
+
+
 def youtube_day():
     # Fixed UTC-8: our day starts at or after Google's reset (PST/PDT), never before it.
     return (datetime.now(timezone.utc)-timedelta(hours=8)).date().isoformat()
@@ -73,7 +86,8 @@ def spend_youtube_units(db,url):
         c.execute("INSERT OR IGNORE INTO quota_units VALUES(?,?,0,0)",(day,"youtube"))
         used=c.execute("SELECT units FROM quota_units WHERE day=? AND provider='youtube'",(day,)).fetchone()[0]
         if used+cost>YOUTUBE_DAILY_UNITS:
-            raise RuntimeError(f"Local YouTube daily quota budget reached ({used}/{YOUTUBE_DAILY_UNITS} units); resumes after midnight Pacific")
+            raise QuotaExhausted(f"Local YouTube daily quota budget reached ({used}/{YOUTUBE_DAILY_UNITS} units); resumes after midnight Pacific",
+                                 seconds_to_quota_reset())
         c.execute("UPDATE quota_units SET units=units+?,calls=calls+1 WHERE day=? AND provider='youtube'",(cost,day))
         utc=datetime.now(timezone.utc).date().isoformat()
         c.execute("INSERT OR IGNORE INTO quota VALUES(?,?,0)",(utc,"youtube"))

@@ -39,10 +39,11 @@ class Database:
         with self.connect() as conn:
             conn.executescript(SCHEMA)
             # Runtime/channel (targeted campaigns) and queue priority, added after the first audits.
-            for table, column in (("videos","duration REAL"),("videos","channel TEXT"),("jobs","priority INTEGER NOT NULL DEFAULT 0")):
+            for table, column in (("videos","duration REAL"),("videos","channel TEXT"),("videos","thumb_url TEXT"),("videos","thumb_phash TEXT"),("jobs","priority INTEGER NOT NULL DEFAULT 0")):
                 if column.split()[0] not in {r[1] for r in conn.execute(f"PRAGMA table_info({table})")}:
                     conn.execute(f"ALTER TABLE {table} ADD COLUMN {column}")
             conn.execute("CREATE INDEX IF NOT EXISTS jobs_priority ON jobs(state, priority DESC, id)")
+            conn.execute("CREATE TABLE IF NOT EXISTS reviews(video_id INTEGER PRIMARY KEY, verdict TEXT NOT NULL, note TEXT, updated REAL NOT NULL)")
             # Pre-tuning builds stored long pauses on the spacing key itself.
             conn.execute("INSERT OR REPLACE INTO rate_limits SELECT 'cooldown:'||name,next_at FROM rate_limits WHERE name LIKE 'download:%' AND next_at>?",(time.time()+60,))
             conn.execute("UPDATE rate_limits SET next_at=? WHERE name LIKE 'download:%' AND next_at>?",(time.time(),time.time()+60))
@@ -54,7 +55,8 @@ class Database:
 
     @contextmanager
     def connect(self):
-        conn = sqlite3.connect(self.path, timeout=30)
+        # Discovery and analysis write concurrently; wait for the writer instead of failing.
+        conn = sqlite3.connect(self.path, timeout=120)
         conn.row_factory = sqlite3.Row
         conn.execute("PRAGMA journal_mode=WAL")
         conn.execute("PRAGMA foreign_keys=ON")
@@ -89,7 +91,16 @@ class Database:
                     c.execute("INSERT OR IGNORE INTO period_videos SELECT id,?,? FROM periods WHERE start<=? AND end>=?",(source,vid,published[:10],published[:10]))
             return vid
 
-    def claim(self, lease=300,period_id=None,source=None,cached=None):
+    def claim(self, *args, **kwargs):
+        for attempt in range(5):
+            try:
+                return self._claim(*args, **kwargs)
+            except sqlite3.OperationalError as exc:
+                if "locked" not in str(exc) or attempt == 4:
+                    raise
+                time.sleep(2*(attempt+1))
+
+    def _claim(self, lease=300,period_id=None,source=None,cached=None):
         owner = uuid.uuid4().hex
         now = time.time()
         with self.connect() as c:

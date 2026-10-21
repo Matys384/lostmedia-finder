@@ -26,6 +26,8 @@ class Settings:
     max_slots_per_source: int = 12
     adaptive_pacing: bool = True
     resume_paused: bool = False  # keep running until paused platforms resume
+    # Platforms whose terms forbid downloading videos: only the API thumbnail is fetched.
+    thumbnail_only_sources: tuple = ("youtube",)
     backend: str = "dinov2"
     device: str = "auto"
     crops: object = True  # True: 7 views per frame; "fine": + 8 small corner windows (PiP)

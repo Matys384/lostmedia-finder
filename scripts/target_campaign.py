@@ -11,11 +11,15 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from lostmedia.cli import settings  # noqa: E402
 from lostmedia.db import Database  # noqa: E402
-from lostmedia.targeted import CAMPAIGN, backfill_durations, step  # noqa: E402
+from lostmedia.targeted import CAMPAIGN, backfill_durations, backfill_thumbnails, step  # noqa: E402
 
 root = settings(Path(sys.argv[1] if len(sys.argv) > 1 else "data/chronological")).root
 db = Database(root)
 print(json.dumps({"durations_backfilled": backfill_durations(db)}), flush=True)
+try:
+    print(json.dumps({"thumbnail_urls_backfilled": backfill_thumbnails(db)}), flush=True)
+except Exception as exc:  # quota: the worker falls back to per-video lookups later
+    print(json.dumps({"thumbnail_backfill_error": str(exc)[:200]}), flush=True)
 while not (root/"STOP").exists():
     log = step(db, 100)
     for line in log:

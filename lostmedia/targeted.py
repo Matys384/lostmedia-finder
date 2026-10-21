@@ -21,6 +21,7 @@ import time
 from datetime import date, datetime, timedelta, timezone
 
 from .discovery import request
+from .thumbnails import pick
 
 CAMPAIGN = "bss-reupload"
 TARGET = 312.5            # 5:12-5:13
@@ -30,7 +31,8 @@ START, END = date(2007, 8, 15), date(2014, 12, 31)
 YOUTUBE_TERMS = ["super mario 64 big star secret", "big star secret", "mario 64 secret", "super mario 64 secret",
                  "mario 64 screamer", "mario screamer", "scary mario", "mario 64 scary", "sm64 secret", "mario 64 glitch",
                  "super mario 64", "mario 64"]
-ARCHIVE_TERMS = ["mario 64", "super mario", "big star secret", "screamer"]
+ARCHIVE_TERMS = ["mario 64", "super mario", "big star secret", "screamer", "youtube mario", "mario 64 youtube",
+                 "lotusman17", "youtube screamer", "sm64"]
 PRIORITY = {"exact": 100, "near": 50, "keyword": 40}
 
 SCHEMA = """
@@ -142,7 +144,8 @@ def youtube_details(db, ids):
                        {"key": key, "part": "contentDetails,snippet", "id": ",".join(ids[i:i+50]), "maxResults": 50})
         for x in data.get("items", []):
             out[x["id"]] = {"duration": iso_seconds(x["contentDetails"].get("duration")), "channel": x["snippet"].get("channelId"),
-                            "title": x["snippet"]["title"], "published": x["snippet"]["publishedAt"]}
+                            "title": x["snippet"]["title"], "published": x["snippet"]["publishedAt"],
+                            "thumb": pick(x["snippet"].get("thumbnails"))}
     return out
 
 
@@ -165,7 +168,7 @@ def youtube(db, node):
         # Keyword hits outside the runtime window still enter the queue, behind the window.
         keep(db, dict(source="youtube", external_id=vid_id, url="https://www.youtube.com/watch?v="+vid_id,
                       title=d["title"], published=d["published"]), d["duration"], label or "keyword")
-        db.execute("UPDATE videos SET channel=COALESCE(channel,?) WHERE source='youtube' AND external_id=?", (d["channel"], vid_id))
+        db.execute("UPDATE videos SET channel=COALESCE(channel,?),thumb_url=COALESCE(thumb_url,?) WHERE source='youtube' AND external_id=?", (d["channel"], d["thumb"], vid_id))
         new += not existed
     cursor = data.get("nextPageToken")
     state = "pending" if cursor and node["pages"]+1 < 10 else ("saturated" if cursor else "exhausted")
@@ -243,13 +246,26 @@ def backfill_durations(db, limit=100000):
         details = youtube_details(db, [r["external_id"] for r in rows])
         for r in rows:
             d = details.get(r["external_id"])
-            db.execute("UPDATE videos SET duration=?,channel=COALESCE(channel,?) WHERE id=?",
-                       (d["duration"] if d and d["duration"] is not None else -1, d and d["channel"], r["id"]))
+            db.execute("UPDATE videos SET duration=?,channel=COALESCE(channel,?),thumb_url=COALESCE(thumb_url,?) WHERE id=?",
+                       (d["duration"] if d and d["duration"] is not None else -1, d and d["channel"], d and d["thumb"], r["id"]))
             label = tier(d and d["duration"])
             if label:
                 db.execute("UPDATE jobs SET priority=MAX(priority,?) WHERE video_id=?", (PRIORITY[label], r["id"]))
             updated += 1
     return updated
+
+
+def backfill_thumbnails(db, limit=100000):
+    """Thumbnail URLs for known YouTube videos, 50 per videos.list call (1 unit each)."""
+    rows = db.rows("SELECT id,external_id FROM videos WHERE source='youtube' AND is_reference=0 AND thumb_url IS NULL LIMIT ?", (limit,))
+    if not rows or not os.environ.get("YOUTUBE_API_KEY"):
+        return 0
+    details = youtube_details(db, [r["external_id"] for r in rows])
+    for r in rows:
+        d = details.get(r["external_id"])
+        db.execute("UPDATE videos SET thumb_url=?,duration=COALESCE(duration,?),channel=COALESCE(channel,?) WHERE id=?",
+                   (d["thumb"] if d else "", d and d["duration"], d and d["channel"], r["id"]))
+    return len(rows)
 
 
 def progress(db):

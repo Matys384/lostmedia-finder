@@ -15,6 +15,14 @@ Confidentialité : [PRIVACY.md](PRIVACY.md) · Conditions : [TERMS.md](TERMS.md)
 - **Campagne ciblée « réuploads »** (`lostmedia/targeted.py`, `scripts/target_campaign.py`) : toutes les vidéos de 5:12 ± 5 s (307–318 s) du 15/08/2007 au 31/12/2014. Dailymotion filtre la durée côté serveur ; YouTube par mots-clés + durée exacte via `videos.list`. Ces vidéos passent en tête de file (`jobs.priority`), sans exclure les autres.
 - **Quota YouTube compté en unités** (search = 100, videos/playlistItems/channels = 1 ; budget local 9 500/jour, jour aligné sur minuit Pacifique).
 
+### YouTube : miniatures uniquement (21/10/2026, soir)
+
+- **Aucune vidéo YouTube n'est téléchargée** (`thumbnail_only_sources = ["youtube"]`, refus codé dans `media.acquire`). Seule la miniature renvoyée par l'API est récupérée et comparée aux images de BSS (`lostmedia/thumbnails.py`). Le score classe, il ne prouve rien.
+- **Page de vérification** : <http://127.0.0.1:8765/candidates>. Vidéos YouTube de 5:07–5:18 (ou 4:10–5:30), triées par score, ou par groupes de miniatures identiques (signature typique d'un réupload). Verdicts « pas BSS / à revoir / BSS ! » enregistrés, export CSV à partager.
+- Deuxième référence : le fragment BSS complet (0–47,7 s, cartons de texte inclus), utile pour les miniatures.
+- Dailymotion et Internet Archive gardent l'analyse vidéo complète. Archive : recherches supplémentaires sur ses copies de vidéos YouTube.
+- Quota YouTube épuisé = pause jusqu'à minuit (Pacifique), jamais un échec.
+
 Les sections ci-dessous décrivent l'état de la première transmission et restent valables sauf mention contraire ci-dessus.
 
 **Reprise par un autre agent : lire [HANDOFF.md](HANDOFF.md) en premier.** Ce fichier contient l'état exact du 21/10/2026, les services ouverts, les limites connues et les prochaines corrections. Les compteurs finaux sont dans [reports/final-audit.json](reports/final-audit.json) ; les rapports antérieurs sont des instantanés de développement.

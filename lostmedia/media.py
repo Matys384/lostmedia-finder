@@ -25,6 +25,9 @@ def probe(path):
 def acquire(video, settings, db):
     if video.get("local_path") and Path(video["local_path"]).is_file():
         return Path(video["local_path"])
+    if video["source"] in settings.thumbnail_only_sources:
+        # Hard stop: these platforms' terms forbid downloading; see thumbnails.py.
+        raise PermissionError(f"Video download disabled for {video['source']} (thumbnail-only platform)")
     from .storage import enforce
     enforce(settings,settings.max_download_mb*1024**2,max_age=30)
     if shutil.disk_usage(settings.root).free < settings.min_free_gb * 1024**3:

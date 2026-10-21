@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Candidats YouTube</title><link rel="stylesheet" href="/static/style.css"><script src="/static/candidates.js" defer></script></head>
+<body><header><span class="mark">LF</span><div><h1>Candidats YouTube à vérifier</h1><p>Miniatures officielles de l'API · aucune vidéo YouTube téléchargée</p></div><a id="live" href="/">← Tableau de bord</a></header>
+<main>
+<section>
+<p class="muted">Durée 5:07–5:18 par défaut. Le score compare la miniature aux images connues de BSS : il classe, il ne prouve rien. Les miniatures identiques (même image, chaînes différentes) sont regroupées : un groupe de plusieurs vidéos est la signature typique d'un réupload. Ouvre la vidéo sur YouTube, puis note ton verdict.</p>
+<div class="filters">
+<label>Durée <select id="tier"><option value="exact">5:07–5:18</option><option value="near">4:10–5:30</option><option value="all">toutes</option></select></label>
+<label>Statut <select id="verdict"><option value="unseen">à voir</option><option value="maybe">à revoir</option><option value="not_bss">pas BSS</option><option value="bss">BSS !</option><option value="all">tous</option></select></label>
+<label>Tri <select id="sort"><option value="score">score miniature</option><option value="group">groupes de doublons</option><option value="date">date</option></select></label>
+<a id="csv" href="#">Exporter en CSV</a>
+</div>
+<p id="summary" class="muted"></p><p id="message" role="status"></p>
+</section>
+<div id="grid" class="grid"></div>
+<p><button id="more">Afficher plus</button></p>
+</main></body></html>

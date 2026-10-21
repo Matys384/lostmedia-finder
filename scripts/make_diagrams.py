@@ -45,8 +45,8 @@ def architecture():
     other = box(d, 60, 440, 520, 200, "Dailymotion & Internet Archive", ["public search APIs", "duration / date filters"], "api")
     disc = box(d, 700, 140, 560, 250, "Discovery + pacing", ["date-window frontier, resumable", "runtime target 5:12 +-5 s", "quota counted in units (< 10k/day)", "429 / Retry-After / anti-bot = pause"], "local")
     db = box(d, 700, 440, 560, 200, "Local SQLite catalog", ["public IDs, titles, dates, durations", "jobs, priorities, results"], "store")
-    work = box(d, 1380, 140, 480, 330, "Analysis worker", ["temporary download of public", "video, deleted after analysis", "CPU decode -> GPU DINOv2", "temporal + geometric checks", "vs. reference clip"], "local")
-    ui = box(d, 1380, 540, 480, 230, "Local dashboard", ["http://127.0.0.1 only", "candidates, scores, times,", "links back to youtube.com"], "local")
+    work = box(d, 1380, 140, 480, 330, "Analysis worker", ["YouTube: API thumbnail only,", "never the video", "Archive/Dailymotion: temporary", "file, deleted after analysis", "GPU DINOv2 + checks vs. reference"], "local")
+    ui = box(d, 1380, 540, 480, 230, "Local review page", ["http://127.0.0.1 only", "YouTube candidates by thumbnail,", "links to youtube.com watch page"], "local")
     user = box(d, 700, 760, 560, 200, "Researcher (local user)", ["reviews candidates", "follows link to the original page"], "person")
     arrow(d, (580, 265), (700, 265), "metadata")
     arrow(d, (580, 540), (700, 540))
@@ -65,9 +65,9 @@ def user_flow():
     steps = [("1. Install", ["clone the public repository", "python + ffmpeg, own API key in .env"]),
              ("2. Add reference", ["import the known clip of", "the lost video (local file)"]),
              ("3. Discover", ["lostmedia target-discover", "API calls paced, quota-capped"]),
-             ("4. Analyze", ["lostmedia run: download,", "compare, delete media"]),
-             ("5. Review", ["dashboard at 127.0.0.1", "verified sequences + timestamps"]),
-             ("6. Follow up", ["open the original public page", "(youtube.com/watch?v=...)"])]
+             ("4. Analyze", ["YouTube: score API thumbnails", "(no video download)"]),
+             ("5. Review", ["127.0.0.1/candidates: thumbnails,", "duplicates grouped, mark verdict"]),
+             ("6. Watch on YouTube", ["open the original watch page", "(youtube.com/watch?v=...)"])]
     x0, y0, w, h, gap = 60, 200, 560, 230, 70
     for i, (title, lines) in enumerate(steps):
         col, row = i % 3, i//3

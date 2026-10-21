@@ -12,6 +12,7 @@ from .matching import match
 from .media import acquire,restore_thumbnails
 from .storage import cleanup_completed,cleanup_video,enforce,StorageFull
 from .tuning import Tuner, classify
+from . import thumbnails
 
 log = logging.getLogger(__name__)
 
@@ -29,6 +30,13 @@ OVER_LIMIT = ("exceeds limit","size limit","duration limit","exceeds configured"
 
 def prepare(job, settings, db, encoder):
     """Download thread: returns cached features, or the local media path to decode."""
+    if job["source"] in settings.thumbnail_only_sources:
+        job["_thumbnail"], job["_signature"] = True, encoder.signature+"-thumb"
+        cached = db.rows("SELECT path FROM features WHERE video_id=? AND signature=?", (job["id"], job["_signature"]))
+        if cached and Path(cached[0]["path"]).is_file() and (settings.root/thumbnails.relative(settings, job["id"])).is_file():
+            return {"cached": cached[0]["path"]}, {"download": 0., "extract": 0., "decode": 0., "gpu": 0., "media_bytes": None}
+        path = thumbnails.fetch(db, job, settings)
+        return {"path": str(path)}, {"download": time.monotonic()-job["_fetch_started"], "extract": 0., "decode": 0., "gpu": 0., "media_bytes": path.stat().st_size}
     cached = db.rows("SELECT path FROM features WHERE video_id=? AND signature=?", (job["id"], encoder.signature))
     if cached and Path(cached[0]["path"]).is_file():
         return {"cached": cached[0]["path"]}, {"download": 0., "extract": 0., "decode": 0., "gpu": 0., "media_bytes": None}
@@ -162,9 +170,10 @@ def run(settings, limit=0, downloads=0, period_id=None,source=None,cached_only=F
                                 outcome = exc
                         else:
                             if "path" in staged:
-                                tuner.record(job["source"], spacing, timings["download"], "ok", timings["media_bytes"])
+                                if spacing is not None:
+                                    tuner.record(job["source"], spacing, timings["download"], "ok", timings["media_bytes"])
                                 job["_timings"] = timings
-                                decoding[cpu.submit(decode, job["id"], staged["path"], settings, encoder.signature)] = job
+                                decoding[cpu.submit(decode, job["id"], staged["path"], settings, job.get("_signature", encoder.signature))] = job
                                 continue
                             outcome = (staged["cached"], timings)
                     else:
@@ -188,6 +197,8 @@ def run(settings, limit=0, downloads=0, period_id=None,source=None,cached_only=F
                     except Cooldown as exc:
                         log.info("%s; job %s requeued", str(exc)[:160], job["id"])
                         db.requeue(job)
+                        if getattr(exc, "pause", None) and cooling.get(job["source"], 0) <= time.time():
+                            pause(job["source"], exc.pause, str(exc))
                         if cooling.get(job["source"], 0) <= time.time():
                             # Raised by a persisted pause (or a stage without one): honour it.
                             cooling[job["source"]] = cooling_until(db, "download:"+job["source"]) or time.time()+BASE_PAUSE
@@ -209,6 +220,24 @@ def run(settings, limit=0, downloads=0, period_id=None,source=None,cached_only=F
             "pacing":tuner.report()}
 
 
+def finish_thumbnail(job, candidate, feature_path, timings, began, settings, db, encoder, references):
+    """Thumbnail-only platforms: a ranking score for human review, never a verified match."""
+    signature = job["_signature"]
+    db.execute("DELETE FROM matches WHERE video_id=? AND signature=?", (job["id"], signature))
+    best = max((thumbnails.score(candidate, features)|{"reference": ref["id"]} for ref, features in references), key=lambda r: r["score"])
+    best["pairs"][0]["candidate_thumb"] = thumbnails.relative(settings, job["id"])
+    db.save_match(job["id"], best["reference"], signature, best)
+    db.execute("UPDATE videos SET thumb_phash=? WHERE id=?", (thumbnails.phash_hex(candidate), job["id"]))
+    matching = time.monotonic()-began
+    db.finish(job)
+    cleanup_video(settings, db, job["id"], [thumbnails.relative(settings, job["id"])])
+    db.execute("UPDATE processing_metrics SET accessible=1,seconds=?,frames=?,feature_bytes=?,completed=?,download_seconds=?,extract_seconds=?,match_seconds=?,media_bytes=COALESCE(?,media_bytes),decode_seconds=?,gpu_seconds=? WHERE video_id=?",
+               (timings["download"]+timings["extract"]+matching, len(candidate["times"]), Path(feature_path).stat().st_size, time.time(),
+                timings["download"], timings["extract"], matching, timings["media_bytes"], timings.get("decode"), timings.get("gpu"), job["id"]))
+    log.info("Thumbnail scored %s (%s): %.3f %s", job["id"], job["source"], best["score"], job["title"])
+    return "done"
+
+
 def handle(job, outcome, settings, db, encoder, references):
     """outcome is (feature_path, timings) or the exception raised by an earlier stage."""
     try:
@@ -218,6 +247,8 @@ def handle(job, outcome, settings, db, encoder, references):
         db.execute("INSERT OR IGNORE INTO processing_metrics(video_id,accessible) VALUES(?,1)",(job["id"],))
         began = time.monotonic()
         candidate = load(feature_path)
+        if job.get("_thumbnail"):
+            return finish_thumbnail(job, candidate, feature_path, timings, began, settings, db, encoder, references)
         # Replace only after successful feature extraction. No stale hits on rerun.
         db.execute("DELETE FROM matches WHERE video_id=? AND signature=?", (job["id"],encoder.signature))
         keep=[]

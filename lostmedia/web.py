@@ -57,6 +57,64 @@ def pacing(db):
     return out
 
 
+TIERS={"exact":(307,318),"near":(250,330),"all":(0,10**9)}
+
+
+def groups(hexes, threshold=8):
+    """Group identical-looking thumbnails (64-bit pHash, Hamming <= threshold). Returns group ids."""
+    import numpy as np
+    n=len(hexes)
+    values=np.array([int(h,16) if h else 0 for h in hexes],dtype=np.uint64)
+    parent=list(range(n))
+    def find(i):
+        while parent[i]!=i:
+            parent[i]=parent[parent[i]]
+            i=parent[i]
+        return i
+    for i in range(n):
+        if not hexes[i]:
+            continue
+        close=np.nonzero(np.bitwise_count(values[i+1:]^values[i])<=threshold)[0]
+        for j in close+i+1:
+            if hexes[j]:
+                parent[find(int(j))]=find(i)
+    return [find(i) for i in range(n)]
+
+
+def candidate_rows(db, tier, verdict, sort, limit, offset, source):
+    """Thumbnail-scored videos for human review, grouped by identical thumbnails."""
+    low,high=TIERS.get(tier,TIERS["exact"])
+    rows=db.rows("""SELECT v.id,v.external_id,v.url,v.title,v.published,v.duration,v.channel,v.thumb_phash,
+        MAX(m.score) score,COALESCE(r.verdict,'unseen') verdict FROM videos v JOIN matches m ON m.video_id=v.id
+        LEFT JOIN reviews r ON r.video_id=v.id
+        WHERE v.source=? AND m.signature LIKE '%-thumb' AND v.duration BETWEEN ? AND ? GROUP BY v.id""",(source,low,high))
+    ids=groups([r["thumb_phash"] for r in rows])
+    sizes={}
+    for g in ids:
+        sizes[g]=sizes.get(g,0)+1
+    best={}
+    for r,g in zip(rows,ids):
+        r["group"],r["group_size"]=g,sizes[g]
+        best[g]=max(best.get(g,0),r["score"])
+    if verdict!="all":
+        rows=[r for r in rows if r["verdict"]==verdict]
+    if sort=="group":
+        # Duplicate thumbnails first (re-upload signature), then by best score of the group.
+        rows.sort(key=lambda r:(-r["group_size"],-best[r["group"]],r["group"],-r["score"]))
+    elif sort=="date":
+        rows.sort(key=lambda r:r["published"] or "")
+    else:
+        rows.sort(key=lambda r:-r["score"])
+    reviewed=db.rows("SELECT verdict,COUNT(*) n FROM reviews GROUP BY verdict")
+    return {"total":len(rows),"reviewed":reviewed,"rows":rows[offset:offset+limit]}
+
+
+class ReviewRequest(BaseModel):
+    video_id: int
+    verdict: str = Field(pattern="^(unseen|not_bss|maybe|bss)$")
+    note: str = ""
+
+
 class DiscoveryRequest(BaseModel):
     provider: str = "archive"
     query: str = ""
@@ -88,7 +146,7 @@ def create_app(settings):
 
     @app.get("/static/{name}")
     def static(name: str):
-        if name not in {"app.js","style.css"}:
+        if name not in {"app.js","style.css","candidates.js"}:
             raise HTTPException(404)
         return FileResponse(Path(__file__).parent/"static"/name)
 
@@ -212,6 +270,38 @@ def create_app(settings):
         except ValueError:
             raise HTTPException(400,"Invalid dates")
         return launch("discovery",["discover",request.provider,"--query",request.query,"--start",request.start,"--end",request.end,"--pages",str(request.pages)])
+
+    @app.get("/candidates",response_class=HTMLResponse)
+    def candidates_page():
+        return (Path(__file__).parent/"static/candidates.html").read_text("utf-8")
+
+    @app.get("/thumb/{video}")
+    def platform_thumbnail(video: int):
+        target=(settings.root/"thumbs"/str(video)/"thumbnail.jpg").resolve()
+        if not target.is_relative_to((settings.root/"thumbs").resolve()) or not target.is_file():
+            raise HTTPException(404)
+        return FileResponse(target)
+
+    @app.get("/api/candidates")
+    def candidates(tier: str="exact", verdict: str="unseen", sort: str="score", limit: int=200, offset: int=0, source: str="youtube"):
+        return candidate_rows(db, tier, verdict, sort, max(1,min(limit,1000)), max(0,offset), source)
+
+    @app.get("/api/candidates.csv")
+    def candidates_csv(tier: str="exact", verdict: str="all", source: str="youtube"):
+        import csv, io
+        from fastapi.responses import Response
+        data=candidate_rows(db, tier, verdict, "score", 100000, 0, source)["rows"]
+        out=io.StringIO()
+        fields=["url","title","published","duration","channel","score","group","group_size","verdict"]
+        writer=csv.DictWriter(out, fieldnames=fields, extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(data)
+        return Response(out.getvalue(), media_type="text/csv", headers={"Content-Disposition": f"attachment; filename=candidates-{source}-{tier}.csv"})
+
+    @app.post("/api/review")
+    def review(item: ReviewRequest):
+        db.execute("INSERT OR REPLACE INTO reviews VALUES(?,?,?,?)", (item.video_id, item.verdict, item.note[:500], time.time()))
+        return {"ok": True}
 
     @app.post("/api/retry")
     def retry():

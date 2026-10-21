@@ -234,3 +234,49 @@ def test_classify_and_retry_after():
     wrapper = RuntimeError("wrapped")
     wrapper.exc_info = (HTTPError, HTTPError(), None)
     assert tuning.retry_after(wrapper) == 90
+
+
+def test_youtube_is_thumbnail_only_and_never_downloaded(corpus, monkeypatch):
+    from PIL import Image
+    from lostmedia import media, thumbnails
+    s, db = corpus
+    db.execute("UPDATE videos SET source='youtube',local_path=NULL WHERE external_id='c2'")
+    vid = db.rows("SELECT * FROM videos WHERE external_id='c2'")[0]
+    with pytest.raises(PermissionError):
+        media.acquire(vid, s, db)
+    reference_frame = cv2.VideoCapture(str(s.root.parent / "ref.mp4")).read()[1]
+
+    def fake_fetch(db, video, settings):
+        folder = settings.root / "thumbs" / str(video["id"])
+        folder.mkdir(parents=True, exist_ok=True)
+        Image.fromarray(cv2.cvtColor(reference_frame, cv2.COLOR_BGR2RGB)).save(folder / "thumbnail.jpg")
+        video["_fetch_started"] = time.monotonic()
+        return folder / "thumbnail.jpg"
+
+    monkeypatch.setattr(thumbnails, "fetch", fake_fetch)
+    monkeypatch.setattr(media, "acquire", lambda *a: (_ for _ in ()).throw(AssertionError("youtube video download attempted")))
+    worker.run(s, source="youtube")
+    row = db.rows("SELECT m.score,json_extract(m.payload,'$.status') status,v.thumb_phash FROM matches m JOIN videos v ON v.id=m.video_id WHERE v.external_id='c2'")[0]
+    assert row["status"] == "thumbnail" and row["score"] > 0.9 and len(row["thumb_phash"]) == 16
+    assert (s.root / "thumbs" / str(vid["id"]) / "thumbnail.jpg").is_file()
+    assert db.rows("SELECT state FROM jobs WHERE video_id=?", (vid["id"],))[0]["state"] == "done"
+
+
+def test_candidate_page_groups_duplicates_and_records_review(tmp_path):
+    from fastapi.testclient import TestClient
+    from lostmedia.web import create_app
+    s = Settings(root=tmp_path, backend="phash")
+    db = Database(s.root)
+    for n, (dur, phash, score) in enumerate([(312, "ffff0000ffff0000", .7), (313, "ffff0000ffff0001", .6), (310, "0123456789abcdef", .9), (200, "ffff0000ffff0000", .99)]):
+        vid = db.add("youtube", f"y{n}", f"https://www.youtube.com/watch?v=y{n}", f"t{n}")
+        db.execute("UPDATE videos SET duration=?,thumb_phash=? WHERE id=?", (dur, phash, vid))
+        db.save_match(vid, vid, "sig-thumb", {"score": score, "status": "thumbnail", "pairs": []})
+    client = TestClient(create_app(s))
+    data = client.get("/api/candidates?tier=exact&verdict=all&sort=group").json()
+    assert data["total"] == 3  # the 3:20 video is outside 5:07-5:18
+    assert [r["external_id"] for r in data["rows"]][:2] == ["y0", "y1"] and data["rows"][0]["group_size"] == 2
+    token = client.get("/api/session").json()["token"]
+    assert client.post("/api/review", json={"video_id": data["rows"][0]["id"], "verdict": "not_bss"}).status_code == 403
+    assert client.post("/api/review", json={"video_id": data["rows"][0]["id"], "verdict": "not_bss"}, headers={"X-Lostmedia-Token": token}).status_code == 200
+    assert client.get("/api/candidates?tier=exact&verdict=unseen").json()["total"] == 2
+    assert "y2" in client.get("/api/candidates.csv?tier=exact").text
