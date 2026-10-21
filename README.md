@@ -131,3 +131,9 @@ La cascade actuelle évite les conclusions sur titre/miniature, mais elle calcul
 - [yt-dlp et ses dépendances](https://github.com/yt-dlp/yt-dlp)
 
 Les rapports et états de tests de ce dépôt priment sur toute liste de fonctionnalités souhaitées.
+
+## Schémas
+
+![Architecture](docs/architecture.png)
+
+![Parcours utilisateur](docs/user-flow.png)
